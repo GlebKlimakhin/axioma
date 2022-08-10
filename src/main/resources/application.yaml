@@ -1,0 +1,18 @@
+spring:
+  flyway:
+    enabled: true
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  jooq:
+    sql-dialect: PostgreSQL95Dialect
+server:
+  port: 8189
