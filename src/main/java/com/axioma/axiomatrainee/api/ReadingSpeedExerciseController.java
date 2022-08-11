@@ -1,40 +1,52 @@
 package com.axioma.axiomatrainee.api;
 
-import com.axioma.axiomatrainee.model.ReadingSpeedExercise;
-import com.axioma.axiomatrainee.service.ReadingSpeedExerciseService;
+import com.axioma.axiomatrainee.model.exercises.Exercise;
+import com.axioma.axiomatrainee.model.exercises.ExerciseType;
+import com.axioma.axiomatrainee.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @RestController
 @RequestMapping("/reading")
 public class ReadingSpeedExerciseController {
 
-    private ReadingSpeedExerciseService service;
+    private ExerciseService service;
+
+    public static final ExerciseType TYPE = ExerciseType.READING_SPEED;
+
 
     @Autowired
-    public void setService(ReadingSpeedExerciseService service) {
+    public void setService(ExerciseService service) {
         this.service = service;
     }
 
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
-    public List<ReadingSpeedExercise> findAll() {
-        return service.findAll();
+    public List<Exercise> findAll() {
+        return service.findAllByType(TYPE);
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ReadingSpeedExercise findById(@PathVariable Long id) {
-        return service.findById(id).orElseThrow(EntityNotFoundException::new);
+    public Exercise findById(@PathVariable Long id) {
+        return service.findById(id, TYPE).orElseThrow(EntityNotFoundException::new);
     }
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
+    @Transactional
     public void deleteById(Long id) {
-        service.deleteById(id);
+        service.findAllByType(TYPE).forEach(e -> {
+            if(e.getId().equals(id)) {
+                service.deleteById(id);
+            }
+        });
+        service.findAll();
+
     }
 }

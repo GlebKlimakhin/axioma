@@ -1,15 +1,18 @@
 package com.axioma.axiomatrainee.service;
 
-import com.axioma.axiomatrainee.model.AbstractExercise;
+import com.axioma.axiomatrainee.model.exercises.Exercise;
+import com.axioma.axiomatrainee.model.exercises.ExerciseType;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface AbstractExerciseService<T extends AbstractExercise> {
+public interface AbstractExerciseService{
 
-    List<T> findAll();
+    List<Exercise> findAll();
 
-    Optional<T> findById(Long id);
+    Optional<Exercise> findById(Long id, ExerciseType type);
 
     void deleteById(Long id);
+
+    Exercise save(Exercise exercise);
 }
