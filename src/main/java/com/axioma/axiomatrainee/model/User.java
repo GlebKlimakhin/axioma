@@ -1,9 +1,12 @@
 package com.axioma.axiomatrainee.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -21,12 +24,23 @@ public class User {
     @Column(name = "id")
     Long id;
 
-    @Column(name = "name")
-    String name;
+    @Column(name = "username")
+    String username;
 
-    @ManyToMany
+    @Column(name = "password")
+    String password;
+
+    @Column(name = "firstname")
+    String firstname;
+
+    @Column(name = "lastname")
+    String lastname;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JsonIgnore
     @JoinTable(name = "users_groups",
     joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name = "group_id"))
-    Set<Group> users;
+    Set<Group> groups;
+
 }

@@ -1,11 +1,12 @@
 spring:
   flyway:
     enabled: true
+    baseline-on-migrate: true
   datasource:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
-    password: postgres
+    password: admin
   jpa:
     properties:
       hibernate:

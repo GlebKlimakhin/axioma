@@ -1,9 +1,8 @@
-package com.axioma.axiomatrainee.service;
+package com.axioma.axiomatrainee.service.exercises;
 
 import com.axioma.axiomatrainee.model.exercises.Exercise;
 import com.axioma.axiomatrainee.model.exercises.ExerciseType;
 import com.axioma.axiomatrainee.repository.IExerciseRepository;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

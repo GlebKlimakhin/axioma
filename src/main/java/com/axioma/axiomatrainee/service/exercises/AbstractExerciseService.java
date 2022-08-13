@@ -1,4 +1,4 @@
-package com.axioma.axiomatrainee.service;
+package com.axioma.axiomatrainee.service.exercises;
 
 import com.axioma.axiomatrainee.model.exercises.Exercise;
 import com.axioma.axiomatrainee.model.exercises.ExerciseType;

@@ -25,7 +25,7 @@ public class Homework {
     @JoinColumn(name = "group_id", nullable = false)
     Group group;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
             @JoinTable(name ="homeworks_exercises",
             joinColumns = @JoinColumn(name = "homework_id"),
             inverseJoinColumns = @JoinColumn(name = "exercise_id"))

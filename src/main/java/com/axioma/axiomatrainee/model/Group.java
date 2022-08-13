@@ -28,7 +28,7 @@ public class Group {
 
     @ManyToMany
     @JoinTable(name = "users_groups",
-    joinColumns = @JoinColumn(name = "user_id"),
-    inverseJoinColumns = @JoinColumn(name = "groups_id"))
+    joinColumns = @JoinColumn(name = "group_id"),
+    inverseJoinColumns = @JoinColumn(name = "user_id"))
     Set<User> users;
 }

@@ -7,13 +7,11 @@ primary key (id)
 
 create table users(
 id bigserial not null primary key,
-name varchar(55) not null
+username varchar(55) not null,
+password varchar(55) not null,
+firstname varchar(55) not null,
+lastname varchar(55) not null
 );
-
-insert into users(name) values
-('Michael'),
-('Nikolay'),
-('Kathrine');
 
 insert into exercises(data, type) VALUES
 ('this is test reading exercise', 'READING_SPEED');
@@ -45,4 +43,13 @@ create table groups_homeworks(
     foreign key (group_id) references groups(id),
     foreign key (homework_id) references homeworks(id)
 );
+
+insert into users(username, password, firstname, lastname) values
+('Max', '123213', 'max', 'dobrynin');
+
+insert into groups(name) values
+('Bababa');
+
+insert into users_groups(user_id, group_id) values
+(1, 1);
 

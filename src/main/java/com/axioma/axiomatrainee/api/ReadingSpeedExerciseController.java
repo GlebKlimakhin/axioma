@@ -2,7 +2,7 @@ package com.axioma.axiomatrainee.api;
 
 import com.axioma.axiomatrainee.model.exercises.Exercise;
 import com.axioma.axiomatrainee.model.exercises.ExerciseType;
-import com.axioma.axiomatrainee.service.ExerciseService;
+import com.axioma.axiomatrainee.service.exercises.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +39,6 @@ public class ReadingSpeedExerciseController {
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    @Transactional
     public void deleteById(Long id) {
         service.findAllByType(TYPE).forEach(e -> {
             if(e.getId().equals(id)) {
