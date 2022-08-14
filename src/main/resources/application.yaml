@@ -13,3 +13,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 8189
+
+jwt:
+  secret: axioma-app
+  expiration: 604800
+  header: Authorization

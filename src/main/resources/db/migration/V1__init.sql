@@ -10,7 +10,13 @@ id bigserial not null primary key,
 username varchar(55) not null,
 password varchar(55) not null,
 firstname varchar(55) not null,
-lastname varchar(55) not null
+lastname varchar(55) not null,
+status varchar(55) default 'ACTIVE'
+);
+
+create table roles(
+id serial not null primary key,
+name varchar(55) not null
 );
 
 insert into exercises(data, type) VALUES

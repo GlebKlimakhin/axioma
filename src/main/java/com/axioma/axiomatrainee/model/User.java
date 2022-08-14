@@ -36,11 +36,19 @@ public class User {
     @Column(name = "lastname")
     String lastname;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    Status status;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnore
     @JoinTable(name = "users_groups",
     joinColumns = @JoinColumn(name = "user_id"),
     inverseJoinColumns = @JoinColumn(name = "group_id"))
     Set<Group> groups;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id", nullable = false)
+    private Role role;
 
 }
