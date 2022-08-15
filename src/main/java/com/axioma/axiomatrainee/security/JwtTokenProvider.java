@@ -4,13 +4,15 @@ import io.jsonwebtoken.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpStatus;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import javax.xml.crypto.Data;
+import javax.servlet.http.HttpServletRequest;
 import java.util.Base64;
 import java.util.Date;
 
@@ -18,10 +20,13 @@ import java.util.Date;
 public class JwtTokenProvider {
 
     @Value("${jwt.secret}")
-    private String SECRET_KEY;
+    private String secretKey;
 
     @Value("${jwt.expiration}")
-    private Long VALIDITY_IN_MILLISECOUNDS;
+    private Long validityInMilliseconds;
+
+    @Value("${jwt.header}")
+    private String authorizationHeader;
 
     private UserDetailsService userDetailsService;
 
@@ -33,44 +38,49 @@ public class JwtTokenProvider {
 
     @PostConstruct
     protected void init() {
-        SECRET_KEY = Base64.getEncoder()
-                .encodeToString(SECRET_KEY.getBytes());
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
+        secretKey = bCryptPasswordEncoder
+                .encode(secretKey);
     }
 
     public String createToken(String username, String role) {
         Claims claims = Jwts.claims().setSubject(username);
         claims.put("role", role);
         Date now = new Date();
-        Date validity = new Date(now.getTime() + VALIDITY_IN_MILLISECOUNDS * 1000); //todoSettings
-
+        Date validity = new Date(now.getTime() + validityInMilliseconds * 1000); //todoSettings
         return Jwts.builder()
                 .setClaims(claims)
                 .setIssuedAt(now)
                 .setExpiration(validity)
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+                .signWith(SignatureAlgorithm.HS256, secretKey)
                 .compact();
     }
 
     public boolean validateToken(String token) {
         try {
-            Jws<Claims> claimsJws = Jwts.parser().setSigningKey(SECRET_KEY)
+            Jws<Claims> claimsJws = Jwts.parser().setSigningKey(secretKey)
                     .parseClaimsJws(token);
             return claimsJws.getBody().getExpiration().before(new Date());
         }
         catch (JwtException | IllegalArgumentException exception) {
-            throw new JwtAuthenticationException("Jwt token is expired or invalid", HttpStatus.UNAUTHORIZED);
+            throw new JwtAuthenticationException("Jwt token is expired or invalid");
         }
     }
 
     public Authentication getAuthentication(String token) {
-
+        UserDetails userDetails = userDetailsService.loadUserByUsername(getUsername(token));
+        return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
     public String getUsername(String token) {
         return Jwts.parser()
-                .setSigningKey(SECRET_KEY)
+                .setSigningKey(secretKey)
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();
+    }
+
+    public String resolveToken(HttpServletRequest request) {
+        return request.getHeader(authorizationHeader);
     }
 }

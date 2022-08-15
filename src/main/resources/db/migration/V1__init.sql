@@ -7,11 +7,12 @@ primary key (id)
 
 create table users(
 id bigserial not null primary key,
-username varchar(55) not null,
-password varchar(55) not null,
+username varchar(55) not null unique,
+password varchar(255) not null,
 firstname varchar(55) not null,
 lastname varchar(55) not null,
-status varchar(55) default 'ACTIVE'
+status varchar(55) default 'ACTIVE',
+role varchar(55) default 'USER'
 );
 
 create table roles(
@@ -52,6 +53,9 @@ create table groups_homeworks(
 
 insert into users(username, password, firstname, lastname) values
 ('Max', '123213', 'max', 'dobrynin');
+
+insert into users (username, password, firstname, lastname, status, role) VALUES
+('User', '$2a$10$bzak9YAk/d2t53LO/4fPe..h.LWti7gEfwOmapXBBYnmbdnkNrfNG', 'user', 'user', 'ACTIVE', 'ADMIN');
 
 insert into groups(name) values
 ('Bababa');

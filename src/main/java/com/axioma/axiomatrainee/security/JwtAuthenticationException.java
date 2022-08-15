@@ -9,9 +9,9 @@ public class JwtAuthenticationException extends AuthenticationException {
 
     private HttpStatus httpStatus;
 
-    public JwtAuthenticationException(String detail, HttpStatus httpStatus) {
+    public JwtAuthenticationException(String detail) {
         super(detail);
-        this.httpStatus = httpStatus;
+        this.httpStatus = HttpStatus.UNAUTHORIZED;
     }
 
 }

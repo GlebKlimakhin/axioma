@@ -1,9 +1,11 @@
 package com.axioma.axiomatrainee.service;
 
+import com.axioma.axiomatrainee.model.Status;
 import com.axioma.axiomatrainee.model.User;
 import com.axioma.axiomatrainee.repository.IUserRepository;
 import com.axioma.axiomatrainee.requestdto.SaveUserRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -30,10 +32,14 @@ public class UserService {
 
     public User save(SaveUserRequestDto request) {
         User user = new User();
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         user.setUsername(request.getUsername());
         user.setFirstname(request.getFirstname());
         user.setLastname(request.getLastname());
-        user.setPassword(request.getPassword());
+        user.setPassword(bCryptPasswordEncoder.encode(request.getPassword()));
+        user.setGroups(request.getGroups());
+        user.setRole(request.getRole());
+        user.setStatus(Status.ACTIVE);
         return userRepository.save(user);
     }
 

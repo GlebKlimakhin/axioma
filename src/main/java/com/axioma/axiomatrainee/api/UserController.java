@@ -4,6 +4,7 @@ import com.axioma.axiomatrainee.model.User;
 import com.axioma.axiomatrainee.requestdto.SaveUserRequestDto;
 import com.axioma.axiomatrainee.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
+//    @PreAuthorize("hasAuthority('user')")
     public User findById(@PathVariable Long id) {
         return userService.findById(id);
     }
