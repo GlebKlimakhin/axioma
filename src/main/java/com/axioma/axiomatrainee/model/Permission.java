@@ -1,8 +1,8 @@
 package com.axioma.axiomatrainee.model;
 
 public enum Permission {
-    USER("user"),
-    ADMIN("admin");
+    USER("user:read"),
+    ADMIN("admin:write");
 
     private final String permission;
 

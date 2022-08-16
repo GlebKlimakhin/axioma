@@ -5,6 +5,7 @@ import com.axioma.axiomatrainee.model.exercises.ExerciseType;
 import com.axioma.axiomatrainee.service.exercises.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
@@ -24,12 +25,14 @@ public class ReadingSpeedExerciseController {
         this.service = service;
     }
 
+    @PreAuthorize("hasAuthority('user:read')")
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
     public List<Exercise> findAll() {
         return service.findAllByType(TYPE);
     }
 
+    @PreAuthorize("hasAuthority('admin:write')")
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Exercise findById(@PathVariable Long id) {
