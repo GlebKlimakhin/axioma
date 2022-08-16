@@ -1,0 +1,35 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: app
+    depends_on:
+      - db
+    ports:
+      - "8189:8189"
+    networks:
+      - application_network
+    deploy:
+      resources:
+        limits:
+          memory: 384m
+  db:
+    image: postgres:latest
+    container_name: db
+    env_file:
+      - .env
+    networks:
+      - database
+    deploy:
+      resources:
+        limits:
+          memory: 100m
+
+networks:
+  app_network:
+    driver: bridge
+  database:
+    driver: bridge
