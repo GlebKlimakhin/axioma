@@ -25,14 +25,14 @@ public class ReadingSpeedExerciseController {
         this.service = service;
     }
 
-    @PreAuthorize("hasAuthority('user:read')")
+//    @PreAuthorize("hasAuthority('user:read')")
     @GetMapping("/")
     @ResponseStatus(HttpStatus.OK)
     public List<Exercise> findAll() {
         return service.findAllByType(TYPE);
     }
 
-    @PreAuthorize("hasAuthority('admin:write')")
+//    @PreAuthorize("hasAuthority('admin:write')")
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Exercise findById(@PathVariable Long id) {
