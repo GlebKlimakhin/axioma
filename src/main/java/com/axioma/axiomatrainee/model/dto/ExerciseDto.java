@@ -1,4 +1,4 @@
-package com.axioma.axiomatrainee.model.exercises.dto;
+package com.axioma.axiomatrainee.model.dto;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

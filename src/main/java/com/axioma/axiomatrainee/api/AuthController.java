@@ -26,8 +26,8 @@ import java.util.Map;
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
-    private IUserRepository userRepository;
-    private JwtTokenProvider tokenProvider;
+    private final IUserRepository userRepository;
+    private final JwtTokenProvider tokenProvider;
 
     public AuthController(AuthenticationManager authenticationManager, IUserRepository userRepository, JwtTokenProvider tokenProvider) {
         this.authenticationManager = authenticationManager;

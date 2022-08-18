@@ -1,12 +1,13 @@
 package com.axioma.axiomatrainee.model;
 
+import com.axioma.axiomatrainee.model.security.Role;
+import com.axioma.axiomatrainee.model.security.Status;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.util.Set;
 
 @Entity
@@ -24,20 +25,35 @@ public class User {
     Long id;
 
     @Column(name = "username")
+    @Size(min = 3, max = 12, message = "username cannot be less than 3, and more than 12 characters")
+    @NotBlank
     String username;
 
     @Column(name = "password")
+    @Size(min = 3, max = 12, message = "password cannot be less than 3, and more than 12 characters")
+    @NotBlank
     String password;
 
     @Column(name = "firstname")
+    @Size(min = 3, max = 12, message = "firstname cannot be less than 3, and more than 12 characters")
+    @NotBlank
     String firstname;
 
     @Column(name = "lastname")
+    @Size(min = 3, max = 20, message = "lastname cannot be less than 3, and more than 12 characters")
+    @NotBlank
     String lastname;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
+    @NotBlank
     Status status;
+
+    @Column(name = "email")
+    @Email(regexp = ".+@.+\\..+")
+    @Size(min = 3, max = 30, message = "email cannot be less than 3, and more than 30 characters")
+    @NotBlank
+    String email;
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnore
@@ -48,6 +64,8 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
+    @NotNull
+    @NotBlank
     Role role;
 
 
