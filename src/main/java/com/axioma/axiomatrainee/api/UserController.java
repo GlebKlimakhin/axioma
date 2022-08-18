@@ -30,15 +30,15 @@ public class UserController {
 
     @GetMapping("/{id}")
 //    @PreAuthorize("hasAuthority('user')")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
+    public ResponseEntity<?> findById(@PathVariable Long id) {
         User found = userService.findById(id);
-        ResponseEntity<User> response = ResponseEntity.of(Optional.of(found));
         HttpHeaders headers = new HttpHeaders();
         headers.add("Access-Control-Allow-Origin", "*");
         headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
         headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        response.getHeaders().addAll(headers);
-        return response;
+        return ResponseEntity.ok()
+                .headers(headers)
+                .body(found);
     }
 
     @PostMapping("/")
