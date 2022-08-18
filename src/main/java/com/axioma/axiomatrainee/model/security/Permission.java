@@ -1,4 +1,4 @@
-package com.axioma.axiomatrainee.model;
+package com.axioma.axiomatrainee.model.security;
 
 public enum Permission {
     USER("user:read"),

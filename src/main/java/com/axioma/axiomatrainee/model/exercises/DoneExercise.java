@@ -1,10 +1,30 @@
-package com.axioma.axiomatrainee.model;
+package com.axioma.axiomatrainee.model.exercises;
 
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
+import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+
+@Entity
+@Table(name = "done_exercises")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class DoneExercise {
 
-    //todo
+    @EmbeddedId
+    DoneExerciseId doneExerciseId;
 
-    Long exerciseId;
-    Long userId;
+    @Column(name = "score")
+    @Digits(integer = 1, fraction = 0)
     Integer score;
+
+    @Enumerated
+    @Column(name = "type")
+    @NotBlank
+    ExerciseType exerciseType;
 }
