@@ -4,13 +4,9 @@ import com.axioma.axiomatrainee.model.User;
 import com.axioma.axiomatrainee.requestdto.SaveUserRequestDto;
 import com.axioma.axiomatrainee.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
@@ -30,15 +26,8 @@ public class UserController {
 
     @GetMapping("/{id}")
 //    @PreAuthorize("hasAuthority('user')")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
-        User found = userService.findById(id);
-        HttpHeaders headers = new HttpHeaders();
-        headers.add("Access-Control-Allow-Origin", "*");
-        headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-        headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        return ResponseEntity.ok()
-                .headers(headers)
-                .body(found);
+    public User findById(@PathVariable Long id) {
+        return userService.findById(id);
     }
 
     @PostMapping("/")
