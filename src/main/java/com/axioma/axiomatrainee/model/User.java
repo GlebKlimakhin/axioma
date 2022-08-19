@@ -32,6 +32,7 @@ public class User {
     @Column(name = "password")
     @Size(min = 3, max = 12, message = "password cannot be less than 3, and more than 12 characters")
     @NotBlank
+    @JsonIgnore
     String password;
 
     @Column(name = "firstname")
@@ -67,6 +68,4 @@ public class User {
     @NotNull
     @NotBlank
     Role role;
-
-
 }
