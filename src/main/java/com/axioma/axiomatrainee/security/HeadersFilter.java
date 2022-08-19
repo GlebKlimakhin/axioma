@@ -28,9 +28,9 @@ public class HeadersFilter implements Filter {
 
     private HttpHeaders prepareHeaders() {
         HttpHeaders headers = new HttpHeaders();
-        headers.addAll("Access-Control-Allow-Origin", Collections.singletonList("*"));
-        headers.addAll("Access-Control-Allow-Methods", Collections.singletonList("GET, POST, OPTIONS"));
-        headers.addAll("Access-Control-Allow-Headers", Collections.singletonList("Content-Type, Authorization"));
+        headers.add("Access-Control-Allow-Origin", "*");
+        headers.add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        headers.add("Access-Control-Allow-Headers", "Content-Type, Authorization");
         return headers;
     }
 }
