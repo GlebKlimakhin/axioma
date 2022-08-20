@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/auth")
@@ -43,13 +44,19 @@ public class AuthController {
                     .orElseThrow(() -> new UsernameNotFoundException("user with provided email doesn't exist"));
             String token = tokenProvider.createToken(request.getUsername(), user.getRole().name());
             Map<Object, Object> response = new HashMap<>();
-            response.put("username", request.getUsername());
+            response.put("id", findIdByUsername(request.getUsername()));
             response.put("token", token);
             return ResponseEntity.ok(response);
         }
         catch (AuthenticationException exception) {
             return new ResponseEntity<>("Invalid credentials", HttpStatus.FORBIDDEN);
         }
+    }
+
+    private Long findIdByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .map(User::getId)
+                .orElseThrow(RuntimeException::new);
     }
 
     @PostMapping("/logout")
