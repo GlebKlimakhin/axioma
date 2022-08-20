@@ -73,6 +73,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AxiomaTraineeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="axioma-trainee" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.axioma.axiomatrainee.AxiomaTraineeApplication" />
@@ -127,6 +138,7 @@
       <workItem from="1660582741692" duration="4779000" />
       <workItem from="1660600957772" duration="3599000" />
       <workItem from="1660764223829" duration="19784000" />
+      <workItem from="1661027456649" duration="592000" />
     </task>
     <servers />
   </component>
@@ -148,11 +160,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/security/JwtTokenProvider.java</url>
-          <line>65</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.7.2/spring-security-core-5.7.2.jar!/org/springframework/security/access/expression/SecurityExpressionRoot.class</url>
           <line>41</line>
