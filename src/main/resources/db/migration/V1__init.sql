@@ -15,13 +15,6 @@ status varchar(55) default 'ACTIVE',
 role varchar(55) default 'USER'
 );
 
-create table done_exercises(
-user_id bigint not null,
-exercise_id bigint not null,
-score int,
-primary key(user_id, exercise_id)
-);
-
 create table roles(
 id serial not null primary key,
 name varchar(55) not null

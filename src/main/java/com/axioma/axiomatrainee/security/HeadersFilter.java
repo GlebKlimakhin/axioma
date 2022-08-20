@@ -7,12 +7,14 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 @Component
 public class HeadersFilter implements Filter {
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
+    }
 
     @Override
     public void doFilter(ServletRequest servletRequest,
@@ -25,4 +27,9 @@ public class HeadersFilter implements Filter {
         response.addHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
         filterChain.doFilter(request, response);
         }
+
+    @Override
+    public void destroy() {
+
+    }
 }
