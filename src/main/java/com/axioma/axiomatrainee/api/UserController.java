@@ -1,11 +1,10 @@
 package com.axioma.axiomatrainee.api;
 
 import com.axioma.axiomatrainee.model.User;
-import com.axioma.axiomatrainee.repository.IUserRepository;
+import com.axioma.axiomatrainee.requestdto.SaveUserRequestDto;
+import com.axioma.axiomatrainee.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,15 +12,33 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    private IUserRepository userRepository;
+    private UserService userService;
 
     @Autowired
-    public void setUserRepository(IUserRepository userRepository) {
-        this.userRepository = userRepository;
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/")
     public List<User> findAll() {
-        return userRepository.findAll();
+        return userService.findAll();
     }
+
+    @GetMapping("/{id}")
+//    @PreAuthorize("hasAuthority('user')")
+    public User findById(@PathVariable Long id) {
+        return userService.findById(id);
+    }
+
+    @PostMapping("/")
+    public User save(@RequestBody SaveUserRequestDto request) {
+        return userService.save(request);
+    }
+
+    @DeleteMapping("/")
+    public void deleteById(@PathVariable Long id) {
+        userService.delete(id);
+    }
+
+
 }
