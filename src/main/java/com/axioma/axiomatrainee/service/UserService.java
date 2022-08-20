@@ -1,6 +1,6 @@
 package com.axioma.axiomatrainee.service;
 
-import com.axioma.axiomatrainee.model.Status;
+import com.axioma.axiomatrainee.model.security.Status;
 import com.axioma.axiomatrainee.model.User;
 import com.axioma.axiomatrainee.repository.IUserRepository;
 import com.axioma.axiomatrainee.requestdto.SaveUserRequestDto;

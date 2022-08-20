@@ -1,6 +1,6 @@
 package com.axioma.axiomatrainee.security;
 
-import com.axioma.axiomatrainee.model.Status;
+import com.axioma.axiomatrainee.model.security.Status;
 import com.axioma.axiomatrainee.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
