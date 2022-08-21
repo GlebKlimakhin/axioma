@@ -1,25 +1,3 @@
 spring:
-  flyway:
-    enabled: true
-    baseline-on-migrate: true
-
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
-  datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://ec2-52-212-228-71.eu-west-1.compute.amazonaws.com:5432/d7bof7vus2sm7c
-    username: prkpubkzqkpoqo
-    password: b0ef914ca85ac1edd8c246e5a6a95551bf84624c4d5609b38eb944ac89503ecb
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-server:
-  port: ${PORT:8189}
-
-jwt:
-  secret: axioma-app
-  expiration: 604800
-  header: Authorization
-
+  profiles:
+    active: local

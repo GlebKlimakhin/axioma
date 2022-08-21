@@ -1,6 +1,6 @@
 package com.axioma.axiomatrainee.api;
 
-import com.axioma.axiomatrainee.model.User;
+import com.axioma.axiomatrainee.model.user.User;
 import com.axioma.axiomatrainee.requestdto.SaveUserRequestDto;
 import com.axioma.axiomatrainee.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

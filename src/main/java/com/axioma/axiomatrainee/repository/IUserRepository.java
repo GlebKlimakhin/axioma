@@ -1,9 +1,7 @@
 package com.axioma.axiomatrainee.repository;
 
-import com.axioma.axiomatrainee.model.User;
+import com.axioma.axiomatrainee.model.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 

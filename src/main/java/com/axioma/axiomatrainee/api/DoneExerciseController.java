@@ -27,9 +27,15 @@ public class DoneExerciseController {
         return doneExerciseService.findAllByUserIdAndType(userId, exerciseType);
     }
 
+    @GetMapping("/userId={userId}")
+    public List<DoneExercise> findAllByUserId(@PathVariable Long userId) {
+        return doneExerciseService.findAllByUserId(userId);
+    }
+
     @PostMapping("/")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public DoneExercise save(@RequestBody DoneExercise doneExercise) {
         return doneExerciseService.save(doneExercise);
     }
+
 }

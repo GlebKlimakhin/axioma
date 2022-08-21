@@ -1,7 +1,8 @@
 package com.axioma.axiomatrainee.service;
 
-import com.axioma.axiomatrainee.model.security.Status;
-import com.axioma.axiomatrainee.model.User;
+import com.axioma.axiomatrainee.model.user.Role;
+import com.axioma.axiomatrainee.model.user.Status;
+import com.axioma.axiomatrainee.model.user.User;
 import com.axioma.axiomatrainee.repository.IUserRepository;
 import com.axioma.axiomatrainee.requestdto.SaveUserRequestDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UserService {
@@ -41,6 +43,13 @@ public class UserService {
         user.setRole(request.getRole());
         user.setStatus(Status.ACTIVE);
         return userRepository.save(user);
+    }
+
+    public User updateUserRole(Long userId, Role role) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("No such user found"));
+        user.setRole(role);
+        return user;
     }
 
     public void delete(Long id) {

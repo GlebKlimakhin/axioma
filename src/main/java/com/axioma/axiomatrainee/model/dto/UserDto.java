@@ -1,8 +1,8 @@
 package com.axioma.axiomatrainee.model.dto;
 
 import com.axioma.axiomatrainee.model.Group;
-import com.axioma.axiomatrainee.model.security.Role;
-import com.axioma.axiomatrainee.model.security.Status;
+import com.axioma.axiomatrainee.model.user.Role;
+import com.axioma.axiomatrainee.model.user.Status;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 

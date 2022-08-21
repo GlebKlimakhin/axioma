@@ -51,8 +51,8 @@ public class GroupController {
 
     @PutMapping("/insert/groupId={groupId}&userId={userId}")
     @ResponseStatus(HttpStatus.OK)
-    public void insertUserIntoGroup(@PathVariable Long groupId, @PathVariable Long userId) {
-        groupService.insertUserIntoGroup(groupId, userId);
+    public Group insertUserIntoGroup(@PathVariable Long groupId, @PathVariable Long userId) {
+        return groupService.insertUserIntoGroup(groupId, userId);
     }
 
     @PutMapping("/delete/groupId={groupId}&userId={userId}")
@@ -65,5 +65,11 @@ public class GroupController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteById(@PathVariable Long id) {
         groupService.deleteGroupById(id);
+    }
+
+    @PutMapping("/")
+    @ResponseStatus(HttpStatus.OK)
+    public Group addHomework(@RequestParam Long groupId, @RequestParam Long homeworkId) {
+        return groupService.setHomeworks(groupId, homeworkId);
     }
 }

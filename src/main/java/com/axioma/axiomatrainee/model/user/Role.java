@@ -1,4 +1,4 @@
-package com.axioma.axiomatrainee.model.security;
+package com.axioma.axiomatrainee.model.user;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 

@@ -1,7 +1,7 @@
 package com.axioma.axiomatrainee.requestdto;
 
 import com.axioma.axiomatrainee.model.Group;
-import com.axioma.axiomatrainee.model.security.Role;
+import com.axioma.axiomatrainee.model.user.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

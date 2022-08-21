@@ -12,6 +12,7 @@ password varchar(255) not null,
 firstname varchar(55) not null,
 lastname varchar(55) not null,
 status varchar(55) default 'ACTIVE',
+email varchar(55) unique,
 role varchar(55) default 'USER'
 );
 
@@ -25,7 +26,6 @@ insert into exercises(data, type) VALUES
 
 create table homeworks(
     id bigserial not null,
-    group_id bigint not null,
     primary key (id)
 );
 

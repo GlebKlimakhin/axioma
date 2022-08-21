@@ -23,6 +23,10 @@ public class DoneExerciseService {
         return doneExercisesRepository.findAllByDoneExerciseId_UseridAndExerciseType(userId, type);
     }
 
+    public List<DoneExercise> findAllByUserId(Long userId) {
+        return doneExercisesRepository.findAllByDoneExerciseId_Userid(userId);
+    }
+
     public DoneExercise save(DoneExercise doneExercise) {
         return doneExercisesRepository.save(doneExercise);
     }

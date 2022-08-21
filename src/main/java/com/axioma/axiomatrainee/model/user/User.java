@@ -1,7 +1,6 @@
-package com.axioma.axiomatrainee.model;
+package com.axioma.axiomatrainee.model.user;
 
-import com.axioma.axiomatrainee.model.security.Role;
-import com.axioma.axiomatrainee.model.security.Status;
+import com.axioma.axiomatrainee.model.Group;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -59,8 +58,8 @@ public class User {
     @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnore
     @JoinTable(name = "users_groups",
-    joinColumns = @JoinColumn(name = "user_id"),
-    inverseJoinColumns = @JoinColumn(name = "group_id"))
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "group_id"))
     Set<Group> groups;
 
     @Enumerated(EnumType.STRING)

@@ -1,6 +1,6 @@
 package com.axioma.axiomatrainee.security;
 
-import com.axioma.axiomatrainee.model.User;
+import com.axioma.axiomatrainee.model.user.User;
 import com.axioma.axiomatrainee.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

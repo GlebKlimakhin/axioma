@@ -1,6 +1,6 @@
 package com.axioma.axiomatrainee.api;
 
-import com.axioma.axiomatrainee.model.User;
+import com.axioma.axiomatrainee.model.user.User;
 import com.axioma.axiomatrainee.repository.IUserRepository;
 import com.axioma.axiomatrainee.requestdto.AuthRequestDto;
 import com.axioma.axiomatrainee.security.JwtTokenProvider;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
@@ -55,7 +56,7 @@ public class AuthController {
     private Long findIdByUsername(String username) {
         return userRepository.findByUsername(username)
                 .map(User::getId)
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(EntityNotFoundException::new);
     }
 
     @PostMapping("/logout")

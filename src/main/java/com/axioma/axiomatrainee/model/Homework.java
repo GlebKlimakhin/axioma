@@ -22,11 +22,6 @@ public class Homework {
     @Column(name = "id")
     Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "group_id")
-    @NotNull
-    Group group;
-
     @ManyToMany(fetch = FetchType.EAGER)
             @JoinTable(name ="homeworks_exercises",
             joinColumns = @JoinColumn(name = "homework_id"),
