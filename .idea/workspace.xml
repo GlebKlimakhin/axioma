@@ -8,9 +8,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/api/HomeworkController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/exceptions/ApiError.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/exceptions/ExceptionHandlerAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/model/user/UserProfile.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/requestdto/CreateHomeworkRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/application-local.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/06f04033-203f-43f5-b790-fcf9a091b3d5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06f04033-203f-43f5-b790-fcf9a091b3d5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/06f04033-203f-43f5-b790-fcf9a091b3d5/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/06f04033-203f-43f5-b790-fcf9a091b3d5/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
@@ -48,37 +46,54 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V2__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__init.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V3__init.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/DoneExerciseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/DoneExerciseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/GroupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/AxiomaTraineeApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/DoneExerciseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/GroupController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/ReadingSpeedExerciseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/api/UserController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/configuration/BeanConfiguration.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/mapper/Mapper.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/Group.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/Homework.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/Homework.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/Homework.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/dto/UserDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/dto/UserDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/exercises/DoneExercise.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/exercises/DoneExercise.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/dto/ExerciseDto$ExerciseDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/dto/ExerciseDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/dto/UserDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/exercises/DoneExercise.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/exercises/DoneExerciseId.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/exercises/Exercise.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/exercises/ExerciseType.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/security/Permission.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/security/Role.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/model/security/Status.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IDoneExercisesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IDoneExercisesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IExerciseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IExerciseRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IGroupRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IGroupRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IUserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IUserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/requestdto/AuthRequestDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/requestdto/AuthRequestDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/requestdto/SaveUserRequestDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/requestdto/SaveUserRequestDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/SecurityUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/SecurityUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/GroupService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/HomeworkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/HomeworkService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/exercises/DoneExerciseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/exercises/DoneExerciseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V1__init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V2__init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/db/migration/V2__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IDoneExercisesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IExerciseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IGroupRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IHomeworkRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/repository/IUserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/requestdto/AuthRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/requestdto/SaveUserRequestDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/HeadersFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/JwtAuthenticationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/JwtConfigurer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/JwtTokenFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/JwtTokenProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/SecurityUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/security/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/GroupService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/HomeworkService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/exercises/AbstractExerciseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/exercises/DoneExerciseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/axioma/axiomatrainee/service/exercises/ExerciseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V1__init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V2__init.sql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/db/migration/V3__init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/axioma/axiomatrainee/AxiomaTraineeApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +220,7 @@
       <workItem from="1660582741692" duration="4779000" />
       <workItem from="1660600957772" duration="3599000" />
       <workItem from="1660764223829" duration="17656000" />
-      <workItem from="1661086454811" duration="17407000" />
+      <workItem from="1661086454811" duration="17726000" />
     </task>
     <servers />
   </component>
