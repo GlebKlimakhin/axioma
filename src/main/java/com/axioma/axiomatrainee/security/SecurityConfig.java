@@ -37,7 +37,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/*").permitAll()
-//                .antMatchers("/users/*").permitAll()
+                .antMatchers("/auth/**").permitAll()
+//                .antMatchers("/swagger-ui/index.html").permitAll()
+//                .antMatchers("/swagger-ui/**").permitAll()
+                .antMatchers("/users/*").permitAll()
 //                .antMatchers("/auth/login").permitAll()
 //                .antMatchers("/swagger-ui.html").permitAll()
 //                .antMatchers("/swagger-ui/*").permitAll()
@@ -46,6 +49,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .apply(jwtConfigurer);
     }
+
+        @Override
+        public void configure(WebSecurity web) throws Exception {
+            web.ignoring().antMatchers("/swagger-ui/**", "/v3/api-docs/**");
+        }
 
     @Bean
     @Override
