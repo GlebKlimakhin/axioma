@@ -5,7 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8dc7cd4d-04b1-4019-9090-874cf40bfb63" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/requestdto/UpdateUserRoleRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/service/exercises/RandomExerciseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V3__init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/api/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/api/GroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/api/ReadingSpeedExerciseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/api/ReadingSpeedExerciseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/api/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/api/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/service/exercises/ExerciseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/axioma/axiomatrainee/service/exercises/ExerciseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +143,7 @@
       <workItem from="1660582741692" duration="4779000" />
       <workItem from="1660600957772" duration="3599000" />
       <workItem from="1660764223829" duration="17656000" />
-      <workItem from="1661086454811" duration="18097000" />
+      <workItem from="1661086454811" duration="23834000" />
     </task>
     <servers />
   </component>

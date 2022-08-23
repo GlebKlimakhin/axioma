@@ -67,4 +67,8 @@ public class User {
     @NotNull
     @NotBlank
     Role role;
+
+    @Column(name = "rating")
+    @NotNull
+    private Integer rating;
 }

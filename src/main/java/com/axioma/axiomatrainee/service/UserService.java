@@ -49,7 +49,7 @@ public class UserService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new EntityNotFoundException("No such user found"));
         user.setRole(role);
-        return user;
+        return userRepository.save(user);
     }
 
     public void delete(Long id) {

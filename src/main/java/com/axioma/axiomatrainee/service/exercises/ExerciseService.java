@@ -42,5 +42,4 @@ public class ExerciseService implements AbstractExerciseService{
     public List<Exercise> findAllByType(ExerciseType exerciseType) {
         return exerciseRepository.findAllByExerciseTypeEquals(exerciseType);
     }
-
 }
