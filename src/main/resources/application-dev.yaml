@@ -8,9 +8,9 @@ spring:
       matching-strategy: ant_path_matcher
   datasource:
     driverClassName: org.postgresql.Driver
-    url: postgres://mlmpiimwefjnhs:6deb02c19dac74b489d7fa3345f00311d84e78cb1017825c07d4981ea390b95f@ec2-52-30-67-143.eu-west-1.compute.amazonaws.com:5432/dc5ot1o0a24ckg
-    username: mlmpiimwefjnhs
-    password: 6deb02c19dac74b489d7fa3345f00311d84e78cb1017825c07d4981ea390b95f
+    url: postgres://fsjblzmokqmrwq:6653a940e147f00a2f0e40aea4b28cd5ec082ee322700875ce80f763620be50e@ec2-54-77-40-202.eu-west-1.compute.amazonaws.com:5432/da3mrpq3uonlgr
+    username: fsjblzmokqmrwq
+    password: 6653a940e147f00a2f0e40aea4b28cd5ec082ee322700875ce80f763620be50e
   jpa:
     properties:
       hibernate:
